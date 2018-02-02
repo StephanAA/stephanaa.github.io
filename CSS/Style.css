@@ -5,6 +5,7 @@ h1 {
 p {
 	border-style: ridge;
 	text-indent: 33%;
+	background-color: yellow;
 }
 h2 {
 	color: blue;
