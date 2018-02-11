@@ -13,9 +13,16 @@
 	<button id = "messagebutton" type = "button"> Display Message </button>
 	<script type="text/javascript">
 		document.getElementById("colorbutton").addEventListener("click", changeColor);
-		function changecolor() {
+		function changeColor() {
 			document.getElementById("text").style.color = "red";
 	}	
+	</script>
+
+	<script type="text/javascript">
+		document.getElementById("messagebutton").addEventListener("click", messageDisplay);
+		function messageDisplay() {
+			alert("YOU'RE COMPUTER HAS A VIRUS");
+		}
 	</script>
 
 	<script type="text/javascript">
