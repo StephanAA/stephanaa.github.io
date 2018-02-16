@@ -42,10 +42,10 @@
 		
 		<h2>First Five Songs</h2>
 		<table id="people"></table><br><br>
-		<h2>New People Table</h2>
+		<h3>Table of Songs</h3>
 		<table>
 			<thead>
-				<tr><th>Name</th><th>User ID</th><th>First Login</th><th>City</th></tr>
+				<tr><th>Song</th><th>Artist</th><th>Album</th></tr>
 			</thead>
 			<tbody id="newpeople">
 
@@ -65,7 +65,7 @@
 							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
-					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + obj['User ID'] + "</td></tr>";
+					newtext += "<tr><td>" + obj['Song'] + " " + obj['Artist'] + "</td><td>" + obj['Album'] + "</td></tr>";
 				}
 			}
 			document.getElementById("people").innerHTML = text;
