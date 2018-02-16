@@ -1,41 +1,45 @@
 <html>
 	<head>
-		<title>More Javascript</title>
+		<title>Music Playlist</title>
 		<link rel="stylesheet" href="CSS/Style.css">
 		<script>
 			var users = [
 				{
-					"First": "Rebecca",
-					"Last": "Follman",
-					"User ID": "rfollman",
-					"Date of Login": "02/01/18",
-					"City": "Washington"
+					"Song": "Switch",
+					"Artist": "Roy Woods",
+					"Album": "Waking at Dawn",
 				},
 				{
-					"First": "Susan",
-					"Last": "Parks",
-					"User ID": "sparks",
-					"Date of Login": "01/15/18",
-					"City": "Tallahassee"
+					"Song": "Reminder",
+					"Artist": "The Weeknd",
+					"Album": "Starboy",
 				},
 				{
-					"First": "Zola",
-					"Last": "Hoehn",
-					"User ID": "zola524",
-					"Date of Login": "02/10/18",
-					"City": "Gainesville"
+					"Song": "Do You...",
+					"Artist": "Miguel",
+					"Album": "Kaleidoscope Dream",
+				}
+				{
+					"Song": "For However Long",
+					"Artist": "Bryson Tiller",
+					"Album": "T R A P S O U L",
+				}
+				{
+					"Song": "PRBLMS",
+					"Artist": "6LACK",
+					"Album": "FREE 6LACK",
 				}
 			];
 		</script>
 	</head>
 	<body>
-		<h1>Javascript Looping</h1>
-		<h2>People Table</h2>
+		<h1>Music Playlist</h1>
+		<h2>First 5 Songs</h2>
 		<table id="people"></table><br><br>
-		<h2>New People Table</h2>
+		<h2>Songs Table</h2>
 		<table>
 			<thead>
-				<tr><th>Name</th><th>User ID</th><th>First Login</th><th>City</th></tr>
+				<tr><th>Song</th><th>Artist</th><th>Album</th></tr>
 			</thead>
 			<tbody id="newpeople">
 				
@@ -55,7 +59,7 @@
 							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
-					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + obj['User ID'] + "</td></tr>";
+					newtext += "<tr><td>" + obj['Song'] + " " + obj['Artist'] + "</td><td>" + obj['Album'] + "</td></tr>";
 				}
 			}
 			document.getElementById("people").innerHTML = text;
