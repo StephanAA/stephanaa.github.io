@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Music Playlist</title>
+</head>
+<body>
+	<header>
+		<button id = "backbutton" type = "button"> Back </button>
+		<h1>Music Playlist</h1>
+	</header>
+		<script>
+			var users = [
+				{
+					"First": "Rebecca",
+					"Last": "Follman",
+					"User ID": "rfollman",
+					"Date of Login": "02/01/18",
+					"City": "Washington"
+				},
+				{
+					"First": "Susan",
+					"Last": "Parks",
+					"User ID": "sparks",
+					"Date of Login": "01/15/18",
+					"City": "Tallahassee"
+				},
+				{
+					"First": "Zola",
+					"Last": "Hoehn",
+					"User ID": "zola524",
+					"Date of Login": "02/10/18",
+					"City": "Gainesville"
+				}
+			];
+		</script>
+	</head>
+	<body>
+		<h1>Javascript Looping</h1>
+		<h2>People Table</h2>
+		<table id="people"></table><br><br>
+		<h2>New People Table</h2>
+		<table>
+			<thead>
+				<tr><th>Name</th><th>User ID</th><th>First Login</th><th>City</th></tr>
+			</thead>
+			<tbody id="newpeople">
+
+			</tbody>
+		</table>
+		<script>
+			/*document.write(users[0].First);*/
+			var text = "";
+			var newtext = "";
+			/*var x;*/
+			for (var x in users) {
+				if (users.hasOwnProperty(x)) {
+					var obj = users[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+							/*document.write(y + " -> " + obj[y] + '\n');*/
+						}
+					}
+					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + obj['User ID'] + "</td></tr>";
+				}
+			}
+			document.getElementById("people").innerHTML = text;
+			document.getElementById("newpeople").innerHTML = newtext;
+			/*document.getElementByID("people").innerHTML = text;*/
+		</script>
+</body>
+</html>
