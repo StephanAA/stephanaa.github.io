@@ -58,17 +58,17 @@
 			</tbody>
 		</table>
 		<script>
-			/*document.write(users[0].First);*/
+			document.write(users[0].First);
 			var text = "";
 			var newtext = "";
-			/*var x;*/
+			var x;
 			for (var x in users) {
 				if (users.hasOwnProperty(x)) {
 					var obj = users[x];
 					for (var y in obj) {
 						if (obj.hasOwnProperty(y)) {
 							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
-							/*document.write(y + " -> " + obj[y] + '\n');*/
+							document.write(y + " -> " + obj[y] + '\n');
 						}
 					}
 					newtext += "<tr><td>" + obj['Song'] + " " + obj['Artist'] + "</td><td>" + obj['Album'] + "</td></tr>";
