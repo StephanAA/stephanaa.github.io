@@ -10,6 +10,7 @@
 					"Album": "Waking at Dawn",
 					"Release Year": "2016",
 					"Genre": "R&B/Soul"
+					"Song Length: 3:21"
 
 				},
 				{
@@ -18,6 +19,7 @@
 					"Album": "Starboy"
 					"Release Year": "2016",
 					"Genre": "R&B/Soul"
+					"Song Length: 3:39"
 				},
 				{
 					"Song": "Do You...",
@@ -25,6 +27,7 @@
 					"Album": "Kaleidoscope Dream"
 					"Release Year": "2012",
 					"Genre": "R&B/Soul"
+					"Song Length: 3:27"
 				},
 				{
 					"Song": "For However Long",
@@ -32,6 +35,7 @@
 					"Album": "T R A P S O U L"
 					"Release Year": "2015",
 					"Genre": "R&B/Soul"
+					"Song Length: 2:04"
 				},
 				{
 					"Song": "PRBLMS",
@@ -39,12 +43,15 @@
 					"Album": "FREE 6LACK"
 					"Release Year": "2016",
 					"Genre": "R&B/Soul"
+					"Song Length: 4:06"
 				}
 			];
 		</script>
 
 	</head>
+
 	<body>
+
 		<h1>Music Playlist</h1>
 		<h2>First 5 Songs</h2>
 		<table id="songs"></table><br><br>
@@ -53,22 +60,24 @@
 			<thead>
 				<tr><th>Song</th><th>Artist</th><th>Album</th></tr>
 			</thead>
+
 			<tbody id="newsongs">
 				
 			</tbody>
 		</table>
+
 		<script>
-			document.write(users[0].First);
+			
 			var text = "";
 			var newtext = "";
-			var x;
+			/*var x;*/
 			for (var x in users) {
 				if (users.hasOwnProperty(x)) {
 					var obj = users[x];
 					for (var y in obj) {
 						if (obj.hasOwnProperty(y)) {
 							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
-							document.write(y + " -> " + obj[y] + '\n');
+							/*document.write(y + " -> " + obj[y] + '\n');*/
 						}
 					}
 					newtext += "<tr><td>" + obj['Song'] + " " + obj['Artist'] + "</td><td>" + obj['Album'] + "</td></tr>";

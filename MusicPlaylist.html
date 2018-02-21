@@ -1,63 +1,85 @@
-<!DOCTYPE html>
 <html>
-<head> Music Playlist
-	<style>
-		table, th, td {
-			border: 1px solid black;
-			border-collapse: collapse;
-		}
-	</style>
-</head>
-<body>
-		<table style="width:100%">
-			<tr>
-				<th>Song</th>
-				<th>Artist</th>
-				<th>Album</th>
-				<th>Release Year</th>
-				<th>Genre</th>
-			</tr>
-
-			<tr>
-				<td>Switch</td>
-				<td>Roy Woods</td>
-				<td>Waking at Dawn</td>
-				<td>2016</td>
-				<td>RandB/Soul</td>
-			</tr>
-
-			<tr>
-				<td>Reminder</td>
-				<td>The Weeknd</td>
-				<td>Starboy</td>
-				<td>2016</td>
-				<td>RandB/Soul</td>
-			</tr>
-
-			<tr>
-				<td>Do You...</td>
-				<td>Miguel</td>
-				<td>Kaleidoscope Dream</td>
-				<td>2016</td>
-				<td>RandB/Soul</td>
-			</tr>
-
-			<tr>
-				<td>For However Long</td>
-				<td>Bryson Tiller</td>
-				<td>T R A P S O U L</td>
-				<td>2015</td>
-				<td>RandB/Soul</td>
-			</tr>
-
-			<tr>
-				<td>PRBLMS</td>
-				<td>6LACK</td>
-				<td>FREE 6LACK</td>
-				<td>2016</td>
-				<td>RandB/Soul</td>
-			</tr>
+	<head>
+		<title>More Javascript</title>
+		<link rel="stylesheet" href="main-php.css">
+		<script>
+			var users = [
+				{
+					"First": "Rebecca",
+					"Last": "Follman",
+					"User ID": "rfollman",
+					"Date of Login": "02/01/18",
+					"City": "Washington"
+				},
+				{
+					"First": "Susan",
+					"Last": "Parks-Hoehn",
+					"User ID": "sparks",
+					"Date of Login": "01/15/18",
+					"City": "Tallahassee"
+				},
+				{
+					"First": "Zola",
+					"Last": "Hoehn",
+					"User ID": "zola524",
+					"Date of Login": "02/10/18",
+					"City": "Gainesville"
+				}
+			];
+		</script>
+	</head>
+	<body>
+		<div class="content">
+		<h1>Javascript Looping</h1>
+		<h2>People Table</h2>
+		<table id="people"></table><br><br>
+		<h2>New People Table</h2>
+		<table>
+			<thead>
+				<tr><th>Name</th><th>User ID</th><th>First Login</th><th>City</th><th>Days Since Last Login</th></tr>
+			</thead>
+			<tbody id="newpeople">
+				
+			</tbody>
 		</table>
-</body>
+		
+		<script>
+			/*suggestions from https://www.htmlgoodies.com/html5/javascript/calculating-the-difference-between-two-dates-in-javascript.html*/
+			function dateCalc(d) {
+				var oneDay = 1000 * 60 * 60 * 24;
+				var month = d.split("/")[0] - 1,
+					day = d.split("/")[1],
+					year = d.split("/")[2]
+				if (year.length == 2) {year = '20' + year;}
+				date1 = new Date(year, month, day);
+				var date1_ms = date1.getTime();
+				var date2 = new Date();
+				var date2_ms = date2.getTime();
+				var diff_ms = date2_ms - date1_ms;
+				return Math.round(diff_ms/oneDay);
+			}
+			
+			var text = "";
+			var newtext = "";
+			for (var x in users) {
+				if (users.hasOwnProperty(x)) {
+					var obj = users[x];
+					for (var y in obj) {
+						if (obj.hasOwnProperty(y)) {
+							text += "<tr><td align='right'>" + y + "</td><td>" + obj[y] + "</td></tr>";
+						}
+					}
 
+					newtext += "<tr><td>" + obj['First'] + " " + obj['Last'] + "</td><td>" + 
+						obj['User ID'] + "</td><td>" + 
+						obj['Date of Login'] + "</td><td>" +
+						obj['City'] + "</td><td>" +
+						dateCalc(obj['Date of Login']) + "</td></tr>";
+				}
+			}
+			document.getElementById("people").innerHTML = text;
+			document.getElementById("newpeople").innerHTML = newtext;
+		</script>
+</div>
+	</body>
 </html>
