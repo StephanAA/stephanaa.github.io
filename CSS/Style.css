@@ -12,6 +12,7 @@ h2 {
 }
 table, th, td {
 	border: 1px solid black;
+	color: yellow;
 }
 body {
 	background-color: #0DA0F6;
