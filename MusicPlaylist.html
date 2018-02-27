@@ -50,6 +50,7 @@
 		
 	<body>
 		<h1>Javascript Looping</h1>
+		<table id="track"></table><br><br>
 		<h2>Music Table</h2>
 		<table border=1 class="center">
 			
@@ -71,24 +72,21 @@
 		</table>
 		
 		<script>
-	
-			var totalTime = 0;
-			for (var t in songs)
-			{
-				if (songs.hasOwnProperty(t))
-				{
-				totalTime += songs[t];
-				}
-			}
 
 			var count = 0;
-			var totalTime = 0;
+			var time = 0;
 			var statData = ""
 			var data = ""
 			for (var x in songs) {
 				if (songs.hasOwnProperty(x)) {
-					++count;
 					var obj = songs[x];
+
+					for(var y in songs){
+						if(obj.hasOwnProperty(y)){
+						}
+					}
+					count += 1
+					time +=(obj['Song Length'])
 					data += "<tr><td>" + obj['Song'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Album'] +  
 					"</td><td>" + obj['Year'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Song Length'] + "</td></tr>"
 				}
@@ -96,9 +94,10 @@
 			statData += "<tr><td>" + count + "</td><td>" + count + "</td><td>" + totalTime + "</td></tr>"
 			document.getElementById("playlist").innerHTML = data;
 			document.getElementById("stats").innerHTML = statData;
+			document.write(time);
 		</script>
 
-		<h3><a href="https://stephanaa.github.io/">Click here</a> to go back to my index page</h3>
+		<h3><a href="https://github.com/StephanAA/stephanaa.github.io/">Click here</a> to go back to my index page</h3>
 
 	</body>
 </html>
