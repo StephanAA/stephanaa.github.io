@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 	<head>
 		<title>Music Playlist</title>
@@ -50,43 +51,38 @@
 		
 	<body>
 		<h1>Javascript Looping</h1>
-		<table id="track"></table><br><br>
-		<h2>Music Table</h2>
-		<table border=1 class="center">
-			
+		<h2 class= "title"> Music Table</h2>
+		
+		<table border=1 class="center">	
 			<thead>
 				<tr>
 					<th>Song</th><th>Artist</th><th>Album</th><th>Year</th><th>Genre</th><th>Song Length</th>
 				</tr>
-			</thead>
-				
+			</thead>	
 			<tbody id="playlist"></tbody>
 
 			<thead>
 				<tr>
 					<th># of Songs</th><th># of Artists</th><th>Playlist Length</th>
 				</tr>
-			</thead>
-				
+			</thead>	
 			<tbody id = "stats"></tbody>
 		</table>
 		
 		<script>
-
-			var count = 0;
 			var time = 0;
+			for (var t in songs){
+				if(!isNaN(songs[t])){
+					time += songs[t];
+				}
+			}
+			var count = 0;
 			var statData = ""
 			var data = ""
 			for (var x in songs) {
 				if (songs.hasOwnProperty(x)) {
+					++count;
 					var obj = songs[x];
-
-					for(var y in songs){
-						if(obj.hasOwnProperty(y)){
-						}
-					}
-					count += 1
-					time +=(obj['Song Length'])
 					data += "<tr><td>" + obj['Song'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Album'] +  
 					"</td><td>" + obj['Year'] + "</td><td>" + obj['Genre'] + "</td><td>" + obj['Song Length'] + "</td></tr>"
 				}
@@ -94,7 +90,6 @@
 			statData += "<tr><td>" + count + "</td><td>" + count + "</td><td>" + totalTime + "</td></tr>"
 			document.getElementById("playlist").innerHTML = data;
 			document.getElementById("stats").innerHTML = statData;
-			document.write(time);
 		</script>
 
 		<h3><a href="https://github.com/StephanAA/stephanaa.github.io/">Click here</a> to go back to my index page</h3>
