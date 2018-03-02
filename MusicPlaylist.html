@@ -83,12 +83,6 @@
 	// 	return totalTime;
 	// }
 	var totalTime = 0;
-	for (var t in songs) {
-		if (!isNaN(songs[t])) {
-			totalTime += songs[t];
-		}
-	}
-
 	var count = 0;
 	var statData = ""
 	var data = ""
@@ -96,6 +90,7 @@
 		if (songs.hasOwnProperty(x)) {
 			++count;
 			var obj = songs[x];
+			totalTime += obj['Song Length'];
 			data += "<tr><td>" + obj['Song'] + "</td><td>" + obj['Artist'] + "</td><td>" + obj['Album'] + "</td><td>" + obj['Year'] + "</td><td>" + obj['Genre'] +      "</td><td>" + obj['Song Length'] + "</td></tr>"
 		}
 	}
